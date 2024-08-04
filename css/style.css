@@ -17,11 +17,14 @@ body{
 
 /*Header*/
 
-/* Default styles - navbar is not sticky on larger screens */
-header {
-    position: static;
-    background-color: #000000;
-    padding: 15px 15px;
+header{
+	position:fixed;
+	left: 0px;
+	top:0px;
+	width: 100%;
+	z-index: 10;
+	background-color: #000000;
+	padding:6px 15px;
 }
 
 header .container{
@@ -31,23 +34,36 @@ header .container{
 	align-items: center;
 }
 
+header .logo {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
 header .logo a {
-    display: inline-block; /* Ensure the link behaves like a block element */
-    width: 100px; /* Adjust the width */
-    height: 100px; /* Adjust the height */
-    overflow: hidden; /* Ensure overflow is hidden if the image is too big */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
-header .logo a img {
-    width: 100%; /* Make the image take up the full width of the parent */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove extra space below the image */
+header .logo-img {
+    height: 80px; /* Adjust based on your logo size */
+    margin-right: none; /* Space between logo and text */
 }
 
+header .logo-text {
+    font-size: 24px; /* Adjust font size as needed */
+    font-weight: 700;
+    color: #ffffff;
+}
+
+header .logo a span{
+	color:#c11325;
+}
 header .nav{
 	position: fixed;
 	background-color: #c11325;
-	width: auto;
+	width: 280px;
 	top:0;
 	right:0;
 	height: 100%;
@@ -627,104 +643,104 @@ header .ham-burger.active span:nth-child(2){
 
 /*Price Section*/
 .price-package {
-	padding: 80px 0;
-	background-color: #ffffff;
-  }
-  
-  .price-package h2 {
-	font-size: 30px;
-	font-weight: 500;
-	color: #000000;
-	padding: 0 0 20px;
-	text-align: center;
-  }
-  
-  .price-package .title-p {
-	font-size: 15px;
-	line-height: 20px;
-	color: #222222;
-	margin: 0;
-	text-align: center;
-	padding: 0 20% 50px;
-	font-family: 'Open Sans', sans-serif;
-  }
-  
-  .price-package .content {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 20px; /* Adjust the gap as needed */
-  }
-  
-  .price-package .content .box {
-	flex: 1 1 calc(25% - 20px); /* Adjust width to fit 4 cards per row */
-	box-sizing: border-box;
-	max-width: calc(25% - 20px);
-	padding: 15px;
-	background-color: #f0f0f0;
-	border-radius: 8px;
-	text-align: center;
-	transition: all 0.3s ease;
-  }
-  
-  .price-package .content .box .inner {
-	background-color: #f0f0f0;
-  }
-  
-  .price-package .content .box .inner .price-tag {
-	padding: 15px;
-	font-size: 20px;
-	background-color: #c11325;
-	color: #ffffff;
-	text-align: center;
-	font-weight: 700;
-  }
-  
-  .price-package .content .box .inner .text {
-	padding: 30px 15px;
-	text-align: center;
-  }
-  
-  .price-package .content .box .inner .text h3 {
-	font-size: 24px;
-	color: #222222;
-	margin: 0;
-	padding: 0 0 20px;
-	font-weight: 700;
-  }
-  
-  .price-package .content .box .inner .text p {
-	font-size: 15px;
-	line-height: 20px;
-	color: #222222;
-	margin: 0;
-	text-align: center;
-	padding: 0 0 5px;
-	font-family: 'Open Sans', sans-serif;
-  }
-  
-  .price-package .content .box .inner .text .btn {
-	padding: 8px 30px;
-	background-color: #c11325;
-	color: #ffffff;
-	text-decoration: none;
-	display: inline-block;
-	border: 1px solid transparent;
-	cursor: pointer;
-	transition: all 0.5s ease;
-	margin-top: 10px;
-  }
-  
-  .price-package .content .box .inner .text .btn:hover {
-	border-color: #222222;
-	color: #222222;
-	background-color: transparent;
-  }
-  
-  .price-package .content .box .inner .img img {
-	width: 100%;
-  }
-  
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.price-package h2 {
+  font-size: 30px;
+  font-weight: 500;
+  color: #000000;
+  padding: 0 0 20px;
+  text-align: center;
+}
+
+.price-package .title-p {
+  font-size: 15px;
+  line-height: 20px;
+  color: #222222;
+  margin: 0;
+  text-align: center;
+  padding: 0 20% 50px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.price-package .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Adjust the gap as needed */
+}
+
+.price-package .content .box {
+  flex: 1 1 calc(25% - 20px); /* Adjust width to fit 4 cards per row */
+  box-sizing: border-box;
+  max-width: calc(25% - 20px);
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.price-package .content .box .inner {
+  background-color: #f0f0f0;
+}
+
+.price-package .content .box .inner .price-tag {
+  padding: 15px;
+  font-size: 20px;
+  background-color: #c11325;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 700;
+}
+
+.price-package .content .box .inner .text {
+  padding: 30px 15px;
+  text-align: center;
+}
+
+.price-package .content .box .inner .text h3 {
+  font-size: 24px;
+  color: #222222;
+  margin: 0;
+  padding: 0 0 20px;
+  font-weight: 700;
+}
+
+.price-package .content .box .inner .text p {
+  font-size: 15px;
+  line-height: 20px;
+  color: #222222;
+  margin: 0;
+  text-align: center;
+  padding: 0 0 5px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.price-package .content .box .inner .text .btn {
+  padding: 8px 30px;
+  background-color: #c11325;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  margin-top: 10px;
+}
+
+.price-package .content .box .inner .text .btn:hover {
+  border-color: #222222;
+  color: #222222;
+  background-color: transparent;
+}
+
+.price-package .content .box .inner .img img {
+  width: 100%;
+}
+
 
 
 /*Contact Section*/
@@ -966,20 +982,5 @@ flex: 0 0 100%;
       font-size: 30px;
   }
 }
-
-@media(max-width: 991px){
-	.price-package .content .box {
-	  flex: 1 1 calc(50% - 20px); /* 2 cards per row */
-	  max-width: calc(50% - 20px);
-	}
-  }
-  
-  @media(max-width: 767px){
-	.price-package .content .box {
-	  flex: 1 1 calc(100% - 20px); /* 1 card per row */
-	  max-width: calc(100% - 20px);
-	}
-  }
-  
 
 
